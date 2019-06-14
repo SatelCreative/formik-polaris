@@ -1,5 +1,5 @@
 import React from 'react';
-import { Field, getIn, FieldProps, FormikContext } from 'formik';
+import { Field, getIn, FieldProps } from 'formik';
 import { Checkbox as PolarisCheckbox } from '@shopify/polaris';
 import { BaseProps as PolarisCheckboxProps } from '@shopify/polaris/types/components/Checkbox/Checkbox';
 import { Omit } from './types';
