@@ -1,0 +1,65 @@
+{
+  "name": "@satel/formik-polaris",
+  "version": "0.1.0",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "umd:main": "dist/formik-polaris.umd.production.js",
+  "module": "dist/formik-polaris.es.production.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "homepage": "https://github.com/SatelCreative/formik-polaris",
+  "bugs": {
+    "url": "https://github.com/SatelCreative/formik-polaris/issues"
+  },
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/SatelCreative/formik-polaris.git"
+  },
+  "description": "Connector for formik and @shopify/polaris",
+  "keywords": [
+    "formik",
+    "polaris",
+    "shopify",
+    "react"
+  ],
+  "author": {
+    "name": "Quinn Blenkinsop",
+    "email": "quinn@blenkinsop.net",
+    "url": "https://github.com/qw-in"
+  },
+  "scripts": {
+    "start": "tsdx watch",
+    "build": "tsdx build",
+    "test": "tsdx test --env=jsdom",
+    "lint": "eslint src/*.ts*"
+  },
+  "peerDependencies": {
+    "@shopify/polaris": ">=3",
+    "formik": ">=1",
+    "react": ">=16"
+  },
+  "devDependencies": {
+    "@shopify/polaris": "^3.17.0",
+    "@types/jest": "^24.0.14",
+    "@types/react": "^16.8.20",
+    "@types/react-dom": "^16.8.4",
+    "@typescript-eslint/eslint-plugin": "1.9.0",
+    "@typescript-eslint/parser": "1.9.0",
+    "eslint": "5.16.0",
+    "eslint-config-airbnb": "17.1.0",
+    "eslint-config-prettier": "4.3.0",
+    "eslint-plugin-import": "2.17.3",
+    "eslint-plugin-jsx-a11y": "6.2.1",
+    "eslint-plugin-prettier": "3.1.0",
+    "eslint-plugin-react": "7.13.0",
+    "formik": "1.5.7",
+    "prettier": "1.18.2",
+    "react": "16.8.6",
+    "react-dom": "16.8.6",
+    "tsdx": "0.6.1",
+    "tslib": "1.10.0",
+    "typescript": "3.4.5"
+  }
+}
