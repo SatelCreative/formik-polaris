@@ -15,12 +15,15 @@ yarn add @satel/formik-polaris
 - [`formik`](https://www.npmjs.com/package/formik)
 - [`@shopify/polaris`](https://www.npmjs.com/package/@shopify/polaris)
 
-## Usage
+## Demo
 
+[Codesandbox Example](https://codesandbox.io/s/satelformik-polaris-basic-example-m7u38)
+
+## Usage
 
 ```tsx
 import React from 'react';
-import ReactDom from 'react-dom';
+import ReactDOM from 'react-dom';
 import { Formik, Form } from 'formik';
 import { AppProvider, Card, Button } from '@shopify/polaris';
 import { Checkbox, TextField, Select } from '@satel/formik-polaris';
