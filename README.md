@@ -69,4 +69,4 @@ ReactDOM.render(<AppProvider><MyForm /></AppProvider>, rootElement);
 
 ## Licence
 
-MIT - See [LICENCE](/LICENCE)
+MIT - See [LICENCE](./LICENCE)
