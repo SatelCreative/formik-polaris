@@ -1,5 +1,12 @@
-import Checkbox from './Checkbox';
-import Select from './Select';
-import TextField from './TextField';
+import Checkbox, { CheckboxProps } from './Checkbox';
+import Select, { SelectProps } from './Select';
+import TextField, { TextFieldProps } from './TextField';
 
-export { Checkbox, Select, TextField };
+export {
+  Checkbox,
+  CheckboxProps,
+  Select,
+  SelectProps,
+  TextField,
+  TextFieldProps,
+};

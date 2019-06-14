@@ -4,29 +4,41 @@ import { TextField as PolarisTextField } from '@shopify/polaris';
 import { BaseProps as PolarisTextFieldProps } from '@shopify/polaris/types/components/TextField/TextField';
 import { Omit } from './types';
 
-interface TextFieldProps {
+interface Props<V> extends PolarisTextFieldProps {
   /**
    * The field identifier that formik can use to
    * connect this field to the data. Will also be
    * used as the polaris id
    */
   name: string;
+
+  /**
+   * Optional helper to convert from
+   * non-string values to a string
+   */
+  decode?: (value: V) => string;
+
+  /**
+   * Optional helper to convert from
+   * current string value to non-string value
+   */
+  encode?: (checked: string) => V;
 }
 
-type PolarisProps = Omit<
-  PolarisTextFieldProps,
-  'value' | 'onChange' | 'onBlur' | 'error'
+export type TextFieldProps<V> = Omit<
+  Props<V>,
+  'id' | 'value' | 'onChange' | 'onBlur' | 'onFocus' | 'error'
 >;
 
-function TextField(props: TextFieldProps & PolarisProps) {
-  const { name, ...polarisProps } = props;
+function TextField<V = any>(props: TextFieldProps<V>) {
+  const { name, encode, decode, ...polarisProps } = props;
 
   return (
     <Field
       name={name}
       render={({
         field,
-        form: { setFieldValue, setFieldError, errors, touched }
+        form: { setFieldValue, setFieldError, errors, touched },
       }: FieldProps) => {
         let error;
         try {
@@ -35,7 +47,7 @@ function TextField(props: TextFieldProps & PolarisProps) {
           }
         } catch (e) {
           throw new Error(
-            `Formik errors object is in an abnormal state, TextField "${name}" could not check it's error state`
+            `Formik errors object is in an abnormal state, TextField "${name}" could not check it's error state`,
           );
         }
 
@@ -43,11 +55,11 @@ function TextField(props: TextFieldProps & PolarisProps) {
           <PolarisTextField
             {...polarisProps}
             id={name}
-            value={field.value}
+            value={decode ? decode(field.value) : field.value}
             onFocus={() => setFieldError(name, '')}
             onBlur={() => field.onBlur({ target: { name } })}
             onChange={value => {
-              setFieldValue(name, value);
+              setFieldValue(name, encode ? encode(value) : value);
             }}
             error={error}
           />

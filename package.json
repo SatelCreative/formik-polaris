@@ -1,6 +1,7 @@
 {
   "name": "@satel/formik-polaris",
   "version": "0.1.0",
+  "license": "MIT",
   "main": "dist/index.js",
   "umd:main": "dist/formik-polaris.umd.production.js",
   "module": "dist/formik-polaris.es.production.js",
@@ -8,6 +9,26 @@
   "files": [
     "dist"
   ],
+  "homepage": "https://github.com/SatelCreative/formik-polaris",
+  "bugs": {
+    "url": "https://github.com/SatelCreative/formik-polaris/issues"
+  },
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/SatelCreative/formik-polaris.git"
+  },
+  "description": "Connector for formik and @shopify/polaris",
+  "keywords": [
+    "formik",
+    "polaris",
+    "shopify",
+    "react"
+  ],
+  "author": {
+    "name": "Quinn Blenkinsop",
+    "email": "quinn@blenkinsop.net",
+    "url": "https://github.com/qw-in"
+  },
   "scripts": {
     "start": "tsdx watch",
     "build": "tsdx build",
@@ -16,6 +37,7 @@
   },
   "peerDependencies": {
     "@shopify/polaris": ">=3",
+    "formik": ">=1",
     "react": ">=16"
   },
   "devDependencies": {
