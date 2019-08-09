@@ -1648,7 +1648,7 @@ atob@^2.1.1:
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
   integrity sha512-Wm6ukoaOGJi/73p/cl2GvLjTI5JM1k/O14isD73YML8StrH/7/lRFgmg8nICZgD3bZZvjwCGxtMOD3wWNAu8cg==
 
-auto-changelog@^1.14.1:
+auto-changelog@1.14.1:
   version "1.14.1"
   resolved "https://registry.yarnpkg.com/auto-changelog/-/auto-changelog-1.14.1.tgz#182f4311b8308be27c64f4e4c0901c7be37ea34e"
   integrity sha512-T98ndHOvMQFz+TCqCi/Tw9jDVgRwECrtB2pkEM8N9snuqZDYPD9QJMRSCt1jr4pOKjvge3Ay2jaMeCpif+hHpw==
