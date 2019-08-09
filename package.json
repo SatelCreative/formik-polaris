@@ -33,7 +33,8 @@
     "start": "tsdx watch",
     "build": "tsdx build",
     "test": "tsdx test --env=jsdom",
-    "lint": "eslint src/*.ts*"
+    "lint": "eslint src/*.ts*",
+    "release": "env-cmd env release-it"
   },
   "peerDependencies": {
     "@shopify/polaris": ">=3",
@@ -49,10 +50,13 @@
     "@types/jest": "24.0.17",
     "@types/react": "16.9.1",
     "@types/react-dom": "16.8.5",
+    "auto-changelog": "^1.14.1",
+    "env-cmd": "9.0.3",
     "eslint": "5.16.0",
     "formik": "1.5.8",
     "react": "16.9.0",
     "react-dom": "16.9.0",
+    "release-it": "12.3.5",
     "tsdx": "0.7.2",
     "tslib": "1.10.0",
     "typescript": "3.5.3"

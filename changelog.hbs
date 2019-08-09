@@ -1,0 +1,14 @@
+{{!-- https://github.com/webpro/release-it/blob/HEAD/docs/recipes/auto-changelog.md#template --}}
+{{#each releases}}
+  {{#if @first}}
+    {{#each merges}}
+      - {{{message}}}{{#if href}} [`#{{id}}`]({{href}}){{/if}}
+    {{/each}}
+    {{#each fixes}}
+      - {{{commit.subject}}}{{#each fixes}}{{#if href}} [`#{{id}}`]({{href}}){{/if}}{{/each}}
+    {{/each}}
+    {{#each commits}}
+      - {{#if breaking}}**Breaking change:** {{/if}}{{{subject}}}{{#if href}} [`{{shorthash}}`]({{href}}){{/if}}
+    {{/each}}
+  {{/if}}
+{{/each}}
