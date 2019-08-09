@@ -14,8 +14,8 @@
     "url": "https://github.com/SatelCreative/formik-polaris/issues"
   },
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/SatelCreative/formik-polaris.git"
+    "type": "git",
+    "url": "https://github.com/SatelCreative/formik-polaris.git"
   },
   "description": "Connector for formik and @shopify/polaris",
   "keywords": [
@@ -41,25 +41,17 @@
     "react": ">=16"
   },
   "devDependencies": {
-    "@shopify/polaris": "^3.17.0",
-    "@types/jest": "^24.0.14",
-    "@types/react": "^16.8.20",
-    "@types/react-dom": "^16.8.4",
-    "@typescript-eslint/eslint-plugin": "1.9.0",
-    "@typescript-eslint/parser": "1.9.0",
+    "@satel/eslint-config-ts-react": "1.2.1",
+    "@shopify/polaris": "3.21.0",
+    "@types/jest": "24.0.17",
+    "@types/react": "16.9.1",
+    "@types/react-dom": "16.8.5",
     "eslint": "5.16.0",
-    "eslint-config-airbnb": "17.1.0",
-    "eslint-config-prettier": "4.3.0",
-    "eslint-plugin-import": "2.17.3",
-    "eslint-plugin-jsx-a11y": "6.2.1",
-    "eslint-plugin-prettier": "3.1.0",
-    "eslint-plugin-react": "7.13.0",
-    "formik": "1.5.7",
-    "prettier": "1.18.2",
-    "react": "16.8.6",
-    "react-dom": "16.8.6",
-    "tsdx": "0.6.1",
+    "formik": "1.5.8",
+    "react": "16.9.0",
+    "react-dom": "16.9.0",
+    "tsdx": "0.7.2",
     "tslib": "1.10.0",
-    "typescript": "3.4.5"
+    "typescript": "3.5.3"
   }
 }
