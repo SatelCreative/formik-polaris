@@ -36,6 +36,9 @@
     "lint": "eslint src/*.ts*",
     "release": "env-cmd env release-it"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "peerDependencies": {
     "@shopify/polaris": ">=3",
     "formik": ">=1",
