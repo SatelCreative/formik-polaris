@@ -48,7 +48,7 @@ interface FormValues {
 
 function MyForm() {
   return (
-    <Formik
+    <Formik<FormValues>
       initialValues={{ title: '', published: false, time: Time.Today }}
       onSubmit={console.log}
     >
