@@ -53,7 +53,7 @@
     "@types/jest": "24.0.17",
     "@types/react": "16.9.1",
     "@types/react-dom": "16.8.5",
-    "auto-changelog": "1.14.1",
+    "auto-changelog": "1.15.0",
     "env-cmd": "9.0.3",
     "eslint": "5.16.0",
     "formik": "1.5.8",
