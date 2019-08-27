@@ -38,7 +38,7 @@ function TextField<V = any>(props: TextFieldProps<V>) {
       name={name}
       render={({
         field,
-        form: { setFieldValue, setFieldError, errors, touched },
+        form: { setFieldValue, setFieldError, errors, touched, isSubmitting },
       }: FieldProps) => {
         let error;
         try {
@@ -53,6 +53,7 @@ function TextField<V = any>(props: TextFieldProps<V>) {
 
         return (
           <PolarisTextField
+            disabled={isSubmitting}
             {...polarisProps}
             id={name}
             value={decode ? decode(field.value) : field.value}

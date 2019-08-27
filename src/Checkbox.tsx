@@ -38,7 +38,7 @@ function CheckboxField<V = any>(props: CheckboxProps<V>) {
       name={name}
       render={({
         field,
-        form: { setFieldValue, setFieldError, errors, touched },
+        form: { setFieldValue, setFieldError, errors, touched, isSubmitting },
       }: FieldProps) => {
         let error;
         try {
@@ -53,6 +53,7 @@ function CheckboxField<V = any>(props: CheckboxProps<V>) {
 
         return (
           <PolarisCheckbox
+            disabled={isSubmitting}
             {...polarisProps}
             id={name}
             checked={decode ? decode(field.value) : field.value}

@@ -38,7 +38,7 @@ function SelectField<V = any>(props: SelectProps<V>) {
       name={name}
       render={({
         field,
-        form: { setFieldValue, setFieldError, errors, touched },
+        form: { setFieldValue, setFieldError, errors, touched, isSubmitting },
       }: FieldProps) => {
         let error;
         try {
@@ -53,6 +53,7 @@ function SelectField<V = any>(props: SelectProps<V>) {
 
         return (
           <PolarisSelect
+            disabled={isSubmitting}
             {...polarisProps}
             id={name}
             value={decode ? decode(field.value) : field.value}
