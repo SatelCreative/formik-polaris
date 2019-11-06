@@ -1,5 +1,12 @@
-import React from 'react';
-import { Field, getIn, FieldProps } from 'formik';
+import React, { useEffect, useCallback } from 'react';
+import {
+  Field,
+  getIn,
+  FieldProps,
+  useField,
+  useFormik,
+  useFormikContext,
+} from 'formik';
 import { TextField as PolarisTextField } from '@shopify/polaris';
 import { BaseProps as PolarisTextFieldProps } from '@shopify/polaris/types/components/TextField/TextField';
 import { Omit } from './types';
@@ -33,39 +40,66 @@ export type TextFieldProps<V> = Omit<
 function TextField<V = any>(props: TextFieldProps<V>) {
   const { name, encode, decode, ...polarisProps } = props;
 
-  return (
-    <Field
-      name={name}
-      render={({
-        field,
-        form: { setFieldValue, setFieldError, errors, touched, isSubmitting },
-      }: FieldProps) => {
-        let error;
-        try {
-          if (getIn(touched, name)) {
-            error = getIn(errors, name);
-          }
-        } catch (e) {
-          throw new Error(
-            `Formik errors object is in an abnormal state, TextField "${name}" could not check it's error state`,
-          );
-        }
+  // Modified from https://github.com/jaredpalmer/formik/blob/5553720b5d6c9729cb3b12fd7948f28ad3be9adc/src/Field.tsx#L74
 
-        return (
-          <PolarisTextField
-            disabled={isSubmitting}
-            {...polarisProps}
-            id={name}
-            value={decode ? decode(field.value) : field.value}
-            onFocus={() => setFieldError(name, '')}
-            onBlur={() => field.onBlur({ target: { name } })}
-            onChange={value => {
-              setFieldValue(name, encode ? encode(value) : value);
-            }}
-            error={error}
-          />
-        );
-      }}
+  const {
+    registerField,
+    unregisterField,
+    getFieldProps,
+    getFieldMeta,
+    isSubmitting,
+    setFieldError,
+    setFieldValue,
+  } = useFormikContext<any>();
+
+  useEffect(() => {
+    if (name) {
+      registerField(name, { validate: undefined });
+    }
+    return () => {
+      if (name) {
+        unregisterField(name);
+      }
+    };
+  }, [registerField, unregisterField, name]);
+
+  const field = getFieldProps({ name });
+  const meta = getFieldMeta(name);
+
+  const rawValue = decode ? decode(field.value) : field.value;
+  const value = rawValue === undefined ? '' : rawValue;
+
+  if (typeof value !== 'string') {
+    throw new Error(
+      `Found value of type "${typeof value}" for field "${name}". Requires string (after decode)`,
+    );
+  }
+
+  const handleFocus = useCallback(() => {
+    setFieldError(name, '');
+  }, [name, setFieldError]);
+
+  const handleBlur = useCallback(() => {
+    field.onBlur({ target: { name } });
+  }, [field, name]);
+
+  const handleChange = useCallback(
+    (v: string) => {
+      setFieldValue(name, encode ? encode(v) : v);
+    },
+    [encode, name, setFieldValue],
+  );
+
+  return (
+    <PolarisTextField
+      disabled={isSubmitting}
+      {...polarisProps}
+      id={name}
+      value={value}
+      onFocus={handleFocus}
+      onBlur={handleBlur}
+      onChange={handleChange}
+      error={meta.error}
     />
   );
 }
