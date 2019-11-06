@@ -3,7 +3,7 @@ import { render, RenderOptions } from '@testing-library/react';
 import { AppProvider } from '@shopify/polaris';
 
 const Provider = ({ children }: { children: ReactNode }) => {
-  return <AppProvider>{children}</AppProvider>;
+  return <AppProvider i18n={{}}>{children}</AppProvider>;
 };
 
 const customRender = (
