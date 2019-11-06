@@ -40,8 +40,8 @@
     "access": "public"
   },
   "peerDependencies": {
-    "@shopify/polaris": ">=3",
-    "formik": ">=1",
+    "@shopify/polaris": ">=4",
+    "formik": ">=2",
     "react": ">=16"
   },
   "devDependencies": {
