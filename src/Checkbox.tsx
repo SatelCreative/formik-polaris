@@ -34,9 +34,8 @@ function CheckboxField<V = any>(props: CheckboxProps<V>) {
   const { name, encode, decode, ...polarisProps } = props;
 
   return (
-    <Field
-      name={name}
-      render={({
+    <Field name={name}>
+      {({
         field,
         form: { setFieldValue, setFieldError, errors, touched, isSubmitting },
       }: FieldProps) => {
@@ -66,7 +65,7 @@ function CheckboxField<V = any>(props: CheckboxProps<V>) {
           />
         );
       }}
-    />
+    </Field>
   );
 }
 

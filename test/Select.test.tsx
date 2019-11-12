@@ -2,7 +2,7 @@
 import React, { ReactNode } from 'react';
 import { Formik, FormikActions, Form } from 'formik';
 import { render, cleanup } from './test-utils';
-import { Checkbox } from '../src';
+import { Select } from '../src';
 
 afterEach(cleanup);
 
@@ -30,11 +30,11 @@ function BasicForm<V = any>(props: BasicFormProps<V>) {
   );
 }
 
-describe('<Checkbox />', () => {
+describe('<Select />', () => {
   it('renders without crashing', async () => {
     const { getByLabelText } = render(
       <BasicForm>
-        <Checkbox label="test" name="test" />
+        <Select label="test" name="test" options={['First', 'Second']} />
       </BasicForm>,
     );
 
