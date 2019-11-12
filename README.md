@@ -118,10 +118,10 @@ import { Textfield } from '@satel/formik-polaris';
 
 ```
 
-### Textfield
+### Select
 
 ```tsx
-import { Textfield } from '@satel/formik-polaris';
+import { Select } from '@satel/formik-polaris';
 
 // ...
 
