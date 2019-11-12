@@ -47,7 +47,7 @@
   },
   "devDependencies": {
     "@satel/eslint-config-ts-react": "3.1.0",
-    "@shopify/polaris": "3.21.1",
+    "@shopify/polaris": "4.7.3",
     "@testing-library/dom": "6.10.1",
     "@testing-library/react": "9.3.2",
     "@testing-library/user-event": "7.1.2",
