@@ -37,7 +37,8 @@
     "release": "env-cmd env release-it"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   },
   "peerDependencies": {
     "@shopify/polaris": ">=3",
