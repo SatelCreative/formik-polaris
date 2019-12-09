@@ -1,7 +1,7 @@
 import React from 'react';
-import { Field, getIn, FieldProps } from 'formik';
 import { Checkbox as PolarisCheckbox } from '@shopify/polaris';
 import { BaseProps as PolarisCheckboxProps } from '@shopify/polaris/types/components/Checkbox/Checkbox';
+import { usePolarisField } from './usePolarisField';
 import { Omit } from './types';
 
 interface Props<V> extends PolarisCheckboxProps {
@@ -33,39 +33,32 @@ export type CheckboxProps<V> = Omit<
 function CheckboxField<V = any>(props: CheckboxProps<V>) {
   const { name, encode, decode, ...polarisProps } = props;
 
-  return (
-    <Field
-      name={name}
-      render={({
-        field,
-        form: { setFieldValue, setFieldError, errors, touched, isSubmitting },
-      }: FieldProps) => {
-        let error;
-        try {
-          if (getIn(touched, name)) {
-            error = getIn(errors, name);
-          }
-        } catch (e) {
-          throw new Error(
-            `Formik errors object is in an abnormal state, Checkbox "${name}" could not check it's error state`,
-          );
-        }
+  const {
+    value: rawValue,
+    isSubmitting,
+    handleFocus,
+    handleBlur,
+    handleChange,
+    error,
+  } = usePolarisField<V, boolean>({ name, encode, decode });
 
-        return (
-          <PolarisCheckbox
-            disabled={isSubmitting}
-            {...polarisProps}
-            id={name}
-            checked={decode ? decode(field.value) : field.value}
-            onFocus={() => setFieldError(name, '')}
-            onBlur={() => field.onBlur({ target: { name } })}
-            onChange={value => {
-              setFieldValue(name, encode ? encode(value) : value);
-            }}
-            error={error}
-          />
-        );
-      }}
+  const value = rawValue === undefined ? false : rawValue;
+  if (typeof value !== 'boolean') {
+    throw new Error(
+      `Found value of type "${typeof value}" for field "${name}". Requires boolean (after decode)`,
+    );
+  }
+
+  return (
+    <PolarisCheckbox
+      disabled={isSubmitting}
+      {...polarisProps}
+      id={name}
+      checked={value}
+      onFocus={handleFocus}
+      onBlur={handleBlur}
+      onChange={handleChange}
+      error={error}
     />
   );
 }
