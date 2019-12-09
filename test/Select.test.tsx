@@ -7,7 +7,6 @@ import { BasicForm } from './util';
 
 afterEach(cleanup);
 
-
 describe('<Select />', () => {
   beforeEach(() => {
     matchMedia.mock();
