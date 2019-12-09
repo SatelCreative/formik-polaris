@@ -11,9 +11,11 @@ yarn add @satel/formik-polaris
 ```
 
 `formik-polaris` also requires the following to have been installed separately:
-- [`react`](https://www.npmjs.com/package/react)
-- [`formik`](https://www.npmjs.com/package/formik)
-- [`@shopify/polaris`](https://www.npmjs.com/package/@shopify/polaris)
+- [`react@>=16.8`](https://www.npmjs.com/package/react)
+- [`formik@2`](https://www.npmjs.com/package/formik)
+- [`@shopify/polaris@4`](https://www.npmjs.com/package/@shopify/polaris)
+
+_if you need support for an older version, try out a `0.X.X` release_
 
 ## Demo
 
@@ -68,6 +70,76 @@ function MyForm() {
 
 const rootElement = document.getElementById("root");
 ReactDOM.render(<AppProvider><MyForm /></AppProvider>, rootElement);
+```
+
+## API
+
+### Checkbox
+
+```tsx
+import { Checkbox } from '@satel/formik-polaris';
+
+// ...
+
+<Checkbox
+  // Formik name (required)
+  name="published"
+
+  // Convert formik value to boolean (optional)
+  decode={value => `${value}`}
+
+  // Convert boolean to formik value (optional)
+  decode={value => `${value}`}
+
+  // Normal polaris Checkbox props
+  {...props}
+/>
+
+```
+
+### Textfield
+
+```tsx
+import { Textfield } from '@satel/formik-polaris';
+
+// ...
+
+<Textfield
+  // Formik name (required)
+  name="published"
+
+  // Convert formik value to string (optional)
+  decode={value => `${value}`}
+
+  // Convert string to formik value (optional)
+  decode={value => `${value}`}
+
+  // Normal polaris Textfield props
+  {...props}
+/>
+
+```
+
+### Select
+
+```tsx
+import { Select } from '@satel/formik-polaris';
+
+// ...
+
+<Select
+  // Formik name (required)
+  name="published"
+
+  // Convert formik value to string (optional)
+  decode={value => `${value}`}
+
+  // Convert string to formik value (optional)
+  decode={value => `${value}`}
+
+  // Normal polaris Textfield props
+  {...props}
+/>
 ```
 
 ## Licence

@@ -1,6 +1,6 @@
 {
   "name": "@satel/formik-polaris",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "license": "MIT",
   "main": "dist/index.js",
   "umd:main": "dist/formik-polaris.umd.production.js",
@@ -22,7 +22,9 @@
     "formik",
     "polaris",
     "shopify",
-    "react"
+    "react",
+    "form",
+    "hooks"
   ],
   "author": {
     "name": "Quinn Blenkinsop",
@@ -37,12 +39,13 @@
     "release": "env-cmd env release-it"
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   },
   "peerDependencies": {
     "@shopify/polaris": ">=4",
     "formik": ">=2",
-    "react": ">=16"
+    "react": ">=16.8"
   },
   "devDependencies": {
     "@satel/eslint-config-ts-react": "3.2.0",
