@@ -1,36 +1,21 @@
 /* eslint-env jest */
-import React, { ReactNode } from 'react';
-import { Formik, FormikActions, Form } from 'formik';
+import React from 'react';
+import { matchMedia } from '@shopify/jest-dom-mocks';
 import { render, cleanup } from './test-utils';
 import { Checkbox } from '../src';
+import { BasicForm } from './util';
 
 afterEach(cleanup);
 
-interface BasicFormProps<V = any> {
-  children: ReactNode;
-  initialValues?: V;
-  onSubmit?: (values: V, formikActions: FormikActions<V>) => void;
-  formRef?: any;
-}
-
-function BasicForm<V = any>(props: BasicFormProps<V>) {
-  const {
-    initialValues = {} as V,
-    onSubmit = () => {
-      throw new Error('Submit not handled');
-    },
-    children,
-    formRef,
-  }: BasicFormProps<V> = props;
-
-  return (
-    <Formik<V> initialValues={initialValues} onSubmit={onSubmit} ref={formRef}>
-      {() => <Form>{children}</Form>}
-    </Formik>
-  );
-}
-
 describe('<Checkbox />', () => {
+  beforeEach(() => {
+    matchMedia.mock();
+  });
+
+  afterEach(() => {
+    matchMedia.restore();
+  });
+
   it('renders without crashing', async () => {
     const { getByLabelText } = render(
       <BasicForm>
@@ -40,4 +25,7 @@ describe('<Checkbox />', () => {
 
     getByLabelText('test');
   });
+
+  // @todo figure out why onChecked never
+  // fires in the test runner
 });
