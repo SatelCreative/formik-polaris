@@ -6,8 +6,10 @@ module.exports = {
     release: true
   },
   scripts: {
-    beforeStart: 'yarn lint && yarn test && yarn build',
-    changelog: 'auto-changelog --stdout --commit-limit false -u --template ./changelog.hbs',
-    beforeStage: 'auto-changelog'
+    changelog: 'auto-changelog --stdout --commit-limit false -u --template ./changelog.hbs'
+  },
+  hooks: {
+    'before:init': 'yarn lint && CI=true yarn test && yarn build',
+    'after:bump': 'auto-changelog'
   }
 }
