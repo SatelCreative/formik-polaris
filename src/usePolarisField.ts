@@ -1,5 +1,5 @@
 import { useEffect, useCallback, useMemo } from 'react';
-import { useFormikContext } from 'formik';
+import { useFormikContext, FieldValidator } from 'formik';
 
 export interface UsePolarisFieldProps<V = any, T = V> {
   /**
@@ -20,13 +20,18 @@ export interface UsePolarisFieldProps<V = any, T = V> {
    * current string value to non-string value
    */
   encode?: (raw: T) => V;
+
+  /**
+   * Pass in a validation function to this field specifically
+   */
+  validate?: FieldValidator;
 }
 
 // eslint-disable-next-line import/prefer-default-export
 export function usePolarisField<V = any, T = V>(
   props: UsePolarisFieldProps<V, T>,
 ) {
-  const { name, encode, decode } = props;
+  const { name, encode, decode, validate } = props;
 
   // Modified from https://github.com/jaredpalmer/formik/blob/5553720b5d6c9729cb3b12fd7948f28ad3be9adc/src/Field.tsx#L74
 
@@ -42,14 +47,14 @@ export function usePolarisField<V = any, T = V>(
 
   useEffect(() => {
     if (name) {
-      registerField(name, { validate: undefined });
+      registerField(name, { validate });
     }
     return () => {
       if (name) {
         unregisterField(name);
       }
     };
-  }, [name, registerField, unregisterField]);
+  }, [name, registerField, unregisterField, validate]);
 
   const field = getFieldProps<V>({ name });
   const meta = getFieldMeta<V>(name);

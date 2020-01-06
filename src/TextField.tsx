@@ -12,7 +12,7 @@ export type TextFieldProps<V = any> = Omit<
 >;
 
 function TextField<V = any>(props: TextFieldProps<V>) {
-  const { name, encode, decode, ...polarisProps } = props;
+  const { name, encode, decode, validate, ...polarisProps } = props;
 
   const {
     value: rawValue,
@@ -21,12 +21,12 @@ function TextField<V = any>(props: TextFieldProps<V>) {
     handleBlur,
     handleChange,
     error,
-  } = usePolarisField<V, string>({ name, encode, decode });
+  } = usePolarisField<V, string>({ name, encode, decode, validate });
 
   const value = rawValue === undefined ? '' : rawValue;
   if (typeof value !== 'string') {
     throw new Error(
-      `Found value of type "${typeof value}" for field "${name}". Requires string (after decode)`,
+      `[TextField] Found value of type "${typeof value}" for field "${name}". Requires string (after decode)`,
     );
   }
 

@@ -44,28 +44,28 @@
   },
   "peerDependencies": {
     "@shopify/polaris": ">=4",
-    "formik": ">=2",
+    "formik": ">=2.0",
     "react": ">=16.8"
   },
   "devDependencies": {
     "@satel/eslint-config-ts-react": "3.2.0",
     "@shopify/jest-dom-mocks": "2.8.7",
-    "@shopify/polaris": "4.9.0",
-    "@testing-library/dom": "6.10.1",
-    "@testing-library/react": "9.3.2",
-    "@testing-library/user-event": "7.1.2",
-    "@types/jest": "24.0.23",
-    "@types/react": "16.9.16",
+    "@shopify/polaris": "4.10.2",
+    "@testing-library/dom": "6.11.0",
+    "@testing-library/react": "9.4.0",
+    "@testing-library/user-event": "8.0.3",
+    "@types/jest": "24.0.25",
+    "@types/react": "16.9.17",
     "@types/react-dom": "16.9.4",
     "auto-changelog": "1.16.2",
     "env-cmd": "10.0.1",
-    "eslint": "6.7.2",
-    "formik": "2.0.6",
+    "eslint": "6.8.0",
+    "formik": "2.1.1",
     "react": "16.12.0",
     "react-dom": "16.12.0",
     "release-it": "12.4.3",
-    "tsdx": "0.11.0",
+    "tsdx": "0.12.1",
     "tslib": "1.10.0",
-    "typescript": "3.7.3"
+    "typescript": "3.7.4"
   }
 }

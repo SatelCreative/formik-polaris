@@ -1,29 +1,10 @@
 import React from 'react';
 import { Checkbox as PolarisCheckbox } from '@shopify/polaris';
 import { BaseProps as PolarisCheckboxProps } from '@shopify/polaris/types/components/Checkbox/Checkbox';
-import { usePolarisField } from './usePolarisField';
+import { usePolarisField, UsePolarisFieldProps } from './usePolarisField';
 import { Omit } from './types';
 
-interface Props<V> extends PolarisCheckboxProps {
-  /**
-   * The field identifier that formik can use to
-   * connect this field to the data. Will also be
-   * used as the polaris id
-   */
-  name: string;
-
-  /**
-   * Optional helper to convert from
-   * non-boolean values to a checked state
-   */
-  decode?: (value: V) => boolean;
-
-  /**
-   * Optional helper to convert from
-   * current checked state to non-boolean value
-   */
-  encode?: (checked: boolean) => V;
-}
+type Props<V> = UsePolarisFieldProps<V, boolean> & PolarisCheckboxProps;
 
 export type CheckboxProps<V> = Omit<
   Props<V>,
@@ -31,7 +12,7 @@ export type CheckboxProps<V> = Omit<
 >;
 
 function CheckboxField<V = any>(props: CheckboxProps<V>) {
-  const { name, encode, decode, ...polarisProps } = props;
+  const { name, encode, decode, validate, ...polarisProps } = props;
 
   const {
     value: rawValue,
@@ -40,12 +21,12 @@ function CheckboxField<V = any>(props: CheckboxProps<V>) {
     handleBlur,
     handleChange,
     error,
-  } = usePolarisField<V, boolean>({ name, encode, decode });
+  } = usePolarisField<V, boolean>({ name, encode, decode, validate });
 
   const value = rawValue === undefined ? false : rawValue;
   if (typeof value !== 'boolean') {
     throw new Error(
-      `Found value of type "${typeof value}" for field "${name}". Requires boolean (after decode)`,
+      `[Checkbox] Found value of type "${typeof value}" for field "${name}". Requires boolean (after decode)`,
     );
   }
 
