@@ -64,7 +64,7 @@
     "react": "16.12.0",
     "react-dom": "16.12.0",
     "release-it": "12.4.3",
-    "tsdx": "0.12.1",
+    "tsdx": "0.12.3",
     "tslib": "1.10.0",
     "typescript": "3.7.4"
   }
