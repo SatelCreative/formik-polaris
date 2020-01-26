@@ -56,7 +56,7 @@
     "@testing-library/user-event": "8.0.3",
     "@types/jest": "24.0.25",
     "@types/react": "16.9.17",
-    "@types/react-dom": "16.9.4",
+    "@types/react-dom": "16.9.5",
     "auto-changelog": "1.16.2",
     "env-cmd": "10.0.1",
     "eslint": "6.8.0",
