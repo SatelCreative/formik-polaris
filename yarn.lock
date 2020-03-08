@@ -693,14 +693,7 @@
     core-js-pure "^3.0.0"
     regenerator-runtime "^0.13.2"
 
-"@babel/runtime@^7.1.2", "@babel/runtime@^7.1.6", "@babel/runtime@^7.4.5", "@babel/runtime@^7.6.2", "@babel/runtime@^7.6.3", "@babel/runtime@^7.7.2", "@babel/runtime@^7.7.4":
-  version "7.7.6"
-  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.7.6.tgz#d18c511121aff1b4f2cd1d452f1bac9601dd830f"
-  integrity sha512-BWAJxpNVa0QlE5gZdWjSxXtemZyZ9RmrmVozxt3NUXeZhVIJ5ANyqmMc0JDrivBZyxUuQvFxlvH4OWWOogGfUw==
-  dependencies:
-    regenerator-runtime "^0.13.2"
-
-"@babel/runtime@^7.7.6":
+"@babel/runtime@^7.1.2", "@babel/runtime@^7.1.6", "@babel/runtime@^7.4.5", "@babel/runtime@^7.6.2", "@babel/runtime@^7.6.3", "@babel/runtime@^7.7.2", "@babel/runtime@^7.7.4", "@babel/runtime@^7.7.6":
   version "7.7.7"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.7.7.tgz#194769ca8d6d7790ec23605af9ee3e42a0aa79cf"
   integrity sha512-uCnC2JEVAu8AKB5do1WRIsvrdJ0flYx/A/9f/6chdacnEZ7LmavjdsDXr5ksYBegxtuTPR5Va9/+13QF/kFkCA==
@@ -1047,7 +1040,7 @@
   resolved "https://registry.yarnpkg.com/@shopify/function-enhancers/-/function-enhancers-1.0.7.tgz#642e97c32b78053f0ca475ac8bd16438fe689e3a"
   integrity sha512-H2xaBIlxTcKvSFh9yaXS5IwXFZ3/PCIHlLXMhN8wmZxryVEITPIkXP8LuXKUKd4d4clJccQZouALjgWZz0dUVA==
 
-"@shopify/javascript-utilities@^2.2.1":
+"@shopify/javascript-utilities@^2.4.1":
   version "2.4.1"
   resolved "https://registry.yarnpkg.com/@shopify/javascript-utilities/-/javascript-utilities-2.4.1.tgz#99e1994381fc33a2609f7792b6812feee32362fa"
   integrity sha512-CDp4nWHjVXTr+rYV5RMBs8aJ5PbXUdbz47jnKisBWa9GFwJktZFj2PxefXqfLd51KpIuQpFnA/NMvq4M5tdTlw==
@@ -1072,34 +1065,36 @@
     promise "^8.0.3"
     tslib "^1.9.3"
 
-"@shopify/polaris-icons@^3.3.0":
-  version "3.8.0"
-  resolved "https://registry.yarnpkg.com/@shopify/polaris-icons/-/polaris-icons-3.8.0.tgz#b430c6633855876c792996a569f1e84e86133573"
-  integrity sha512-zqHI0P5W7HKY+vO/YYMqPfyBB7MMyvpDGYJ55wqMiVmTdnCcij3lf+Arnh0z49dH/8i0UEEdvdEpIdQ4IL3s5Q==
+"@shopify/polaris-icons@^3.9.0":
+  version "3.9.0"
+  resolved "https://registry.yarnpkg.com/@shopify/polaris-icons/-/polaris-icons-3.9.0.tgz#7064b234824788972593efcda9ae7b87f2a2da43"
+  integrity sha512-isGvHpkH57IsQl6iAZA81LaIPdGi8gNSON5hLWXSERvP9SwgTenfDrkOD3UvzLY09Hh7m8lkFBMUVv/ta33xrg==
 
-"@shopify/polaris-tokens@^2.6.0":
-  version "2.7.0"
-  resolved "https://registry.yarnpkg.com/@shopify/polaris-tokens/-/polaris-tokens-2.7.0.tgz#6e36249d3c7bcbedbd079f4c5e6e35e4f12c45af"
-  integrity sha512-KkATqo7cBoIeeaQqCvEWmWn0LK6MFOcQlI5M9CUx+faNoUYZnUnoC9A9dW2aP+egvuonXCoVgSYLHmBxjxdjGA==
+"@shopify/polaris-tokens@^2.10.0":
+  version "2.10.0"
+  resolved "https://registry.yarnpkg.com/@shopify/polaris-tokens/-/polaris-tokens-2.10.0.tgz#e47371aac86ce61b1bd013ccfdd66efebfb04207"
+  integrity sha512-zMRD7WFPhiB1MKiqJ05V6IeXzlDenq8plIRtHjyrDz4eyAqWvshz5SFefzzPOrcHeT12cU7UKEYbMkA9bxLmSg==
+  dependencies:
+    hsluv "^0.1.0"
+    tslib "^1.10.0"
 
-"@shopify/polaris@4.10.2":
-  version "4.10.2"
-  resolved "https://registry.yarnpkg.com/@shopify/polaris/-/polaris-4.10.2.tgz#800760c2127592137c4d02d558b0c7a10f8322bb"
-  integrity sha512-Z6a1dtrub0qk4dDogVrGgxmjlJEKF1edcMXR7pEuyZKeWHVfDexWSqqw6C7dcOU40ac/HthsGnzS1ieWdl6IxQ==
+"@shopify/polaris@4.15.1":
+  version "4.15.1"
+  resolved "https://registry.yarnpkg.com/@shopify/polaris/-/polaris-4.15.1.tgz#e2c62efc90cf7f7d5ad8a4819163136958d0367c"
+  integrity sha512-CNGS0B0+Xhc/RNRHTZZCs4l1VrxN3L4b+nyZDmmXS77CX3cYW6CmzGFI0KEeCIqlfdO2sQx4nJdV6z54q6T11w==
   dependencies:
     "@babel/runtime" "^7.1.6"
     "@material-ui/react-transition-group" "^4.2.0"
     "@shopify/app-bridge" "^1.3.0"
-    "@shopify/javascript-utilities" "^2.2.1"
-    "@shopify/polaris-icons" "^3.3.0"
-    "@shopify/polaris-tokens" "^2.6.0"
+    "@shopify/javascript-utilities" "^2.4.1"
+    "@shopify/polaris-icons" "^3.9.0"
+    "@shopify/polaris-tokens" "^2.10.0"
     "@shopify/useful-types" "^1.2.4"
     "@types/hoist-non-react-statics" "^3.3.1"
     "@types/react" "^16.8.15"
     "@types/react-dom" "^16.8.4"
     "@types/react-transition-group" "^2.0.7"
     hoist-non-react-statics "^3.3.0"
-    hsluv "^0.0.3"
     lodash "^4.17.4"
     tslib "^1.9.3"
 
@@ -1300,15 +1295,7 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react@*", "@types/react@>=16.4.0", "@types/react@^16.0.2", "@types/react@^16.8.15":
-  version "16.9.16"
-  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.9.16.tgz#4f12515707148b1f53a8eaa4341dae5dfefb066d"
-  integrity sha512-dQ3wlehuBbYlfvRXfF5G+5TbZF3xqgkikK7DWAsQXe2KnzV+kjD4W2ea+ThCrKASZn9h98bjjPzoTYzfRqyBkw==
-  dependencies:
-    "@types/prop-types" "*"
-    csstype "^2.2.0"
-
-"@types/react@16.9.17":
+"@types/react@*", "@types/react@16.9.17", "@types/react@>=16.4.0", "@types/react@^16.0.2", "@types/react@^16.8.15":
   version "16.9.17"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-16.9.17.tgz#58f0cc0e9ec2425d1441dd7b623421a867aa253e"
   integrity sha512-UP27In4fp4sWF5JgyV6pwVPAQM83Fj76JOcg02X5BZcpSu5Wx+fP9RMqc2v0ssBoQIFvD5JdKY41gjJJKmw6Bg==
@@ -3705,10 +3692,10 @@ hosted-git-info@^2.1.4:
   resolved "https://registry.yarnpkg.com/hosted-git-info/-/hosted-git-info-2.8.5.tgz#759cfcf2c4d156ade59b0b2dfabddc42a6b9c70c"
   integrity sha512-kssjab8CvdXfcXMXVcvsXum4Hwdq9XGtRD3TteMEvEbq0LXyiNQr6AprqKqfeaDXze7SxWvRxdpwE6ku7ikLkg==
 
-hsluv@^0.0.3:
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/hsluv/-/hsluv-0.0.3.tgz#829107dafb4a9f8b52a1809ed02e091eade6754c"
-  integrity sha1-gpEH2vtKn4tSoYCe0C4JHq3mdUw=
+hsluv@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/hsluv/-/hsluv-0.1.0.tgz#29f40d49642bd56dd0c192122abcc723bb5c2d6c"
+  integrity sha512-ERcanKLAszD2XN3Vh5r5Szkrv9q0oSTudmP0rkiKAGM/3NMc9FLmMZBB7TSqTaXJfSDBOreYTfjezCOYbRKqlw==
 
 html-encoding-sniffer@^1.0.2:
   version "1.0.2"
