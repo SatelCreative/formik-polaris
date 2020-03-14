@@ -142,6 +142,28 @@ import { Select } from '@satel/formik-polaris';
 />
 ```
 
+### RangeSlider
+
+```tsx
+import { RangeSlider } from '@satel/formik-polaris';
+
+// ...
+
+<RangeSlider
+  // Formik name (required)
+  name="published"
+
+  // Convert formik value to string (optional)
+  decode={value => `${value}`}
+
+  // Convert string to formik value (optional)
+  decode={value => `${value}`}
+
+  // Normal polaris RangeSlider props
+  {...props}
+/>
+```
+
 ## Licence
 
 MIT - See [LICENSE](./LICENSE)
