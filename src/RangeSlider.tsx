@@ -1,15 +1,16 @@
 import React from 'react';
 import { RangeSlider as PolarisRangeSlider } from '@shopify/polaris';
-import { RangeSliderProps as PolarisRangeSliderProps, RangeSliderValue } from '@shopify/polaris/types/components/RangeSlider';
+import {
+  RangeSliderProps as PolarisRangeSliderProps,
+  RangeSliderValue,
+} from '@shopify/polaris/types/components/RangeSlider';
 import { usePolarisField, UsePolarisFieldProps } from './usePolarisField';
-import { Omit } from './types';
+import { Omit, OmittedPolarisProps } from './types';
 
-type Props<V> = UsePolarisFieldProps<V, RangeSliderValue> & PolarisRangeSliderProps;
+type Props<V> = UsePolarisFieldProps<V, RangeSliderValue> &
+  PolarisRangeSliderProps;
 
-export type RangeSliderProps<V = any> = Omit<
-  Props<V>,
-  'id' | 'value' | 'onChange' | 'onBlur' | 'onFocus' | 'error'
->;
+export type RangeSliderProps<V = any> = Omit<Props<V>, OmittedPolarisProps>;
 
 function RangeSlider<V = any>(props: RangeSliderProps<V>) {
   const { name, encode, decode, validate, ...polarisProps } = props;

@@ -79,6 +79,14 @@ export function usePolarisField<V = any, T = V>(
     [encode, name, setFieldValue],
   );
 
+  const error = useMemo(() => {
+    if (meta.error && meta.touched) {
+      return meta.error;
+    }
+
+    return undefined;
+  }, [meta.error, meta.touched]);
+
   return useMemo(
     () => ({
       ...field,
@@ -88,7 +96,17 @@ export function usePolarisField<V = any, T = V>(
       handleChange,
       value,
       isSubmitting,
+      error,
     }),
-    [field, handleBlur, handleChange, handleFocus, isSubmitting, meta, value],
+    [
+      error,
+      field,
+      handleBlur,
+      handleChange,
+      handleFocus,
+      isSubmitting,
+      meta,
+      value,
+    ],
   );
 }

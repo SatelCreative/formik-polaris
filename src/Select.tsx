@@ -1,16 +1,13 @@
 import React from 'react';
 import { Select as PolarisSelect } from '@shopify/polaris';
 import { BaseProps as PolarisSelectProps } from '@shopify/polaris/types/components/Select/Select';
-import { Omit } from './types';
+import { Omit, OmittedPolarisProps } from './types';
 import { UsePolarisFieldProps, usePolarisField } from './usePolarisField';
 
 type Props<V> = UsePolarisFieldProps<V, string | undefined> &
   PolarisSelectProps;
 
-export type SelectProps<V> = Omit<
-  Props<V>,
-  'value' | 'onChange' | 'onBlur' | 'error'
->;
+export type SelectProps<V> = Omit<Props<V>, OmittedPolarisProps>;
 
 function SelectField<V = any>(props: SelectProps<V>) {
   const { name, encode, decode, validate, ...polarisProps } = props;
@@ -37,14 +34,14 @@ function SelectField<V = any>(props: SelectProps<V>) {
 
   return (
     <PolarisSelect
+      id={name}
+      error={error}
       disabled={isSubmitting}
       {...polarisProps}
-      id={name}
       value={value as string | undefined}
       onFocus={handleFocus}
       onBlur={handleBlur}
       onChange={handleChange}
-      error={error}
     />
   );
 }
