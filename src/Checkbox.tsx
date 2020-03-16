@@ -1,6 +1,8 @@
 import React from 'react';
-import { Checkbox as PolarisCheckbox } from '@shopify/polaris';
-import { BaseProps as PolarisCheckboxProps } from '@shopify/polaris/types/components/Checkbox/Checkbox';
+import {
+  Checkbox as PolarisCheckbox,
+  CheckboxProps as PolarisCheckboxProps,
+} from '@shopify/polaris';
 import { usePolarisField, UsePolarisFieldProps } from './usePolarisField';
 import { Omit, OmittedPolarisProps } from './types';
 

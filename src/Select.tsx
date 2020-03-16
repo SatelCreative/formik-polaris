@@ -1,6 +1,8 @@
 import React from 'react';
-import { Select as PolarisSelect } from '@shopify/polaris';
-import { BaseProps as PolarisSelectProps } from '@shopify/polaris/types/components/Select/Select';
+import {
+  Select as PolarisSelect,
+  SelectProps as PolarisSelectProps,
+} from '@shopify/polaris';
 import { Omit, OmittedPolarisProps } from './types';
 import { UsePolarisFieldProps, usePolarisField } from './usePolarisField';
 

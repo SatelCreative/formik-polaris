@@ -1,12 +1,16 @@
 /* eslint-env jest */
 import React from 'react';
 import userEvent from '@testing-library/user-event';
-import { wait } from '@testing-library/react';
+import { act, fireEvent } from '@testing-library/react';
+
 import { matchMedia } from '@shopify/jest-dom-mocks';
 
 import { render, cleanup } from './test-utils';
 import { TextField } from '../src';
 import { BasicForm } from './util';
+
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const { waitFor } = require('@testing-library/react');
 
 afterEach(cleanup);
 
@@ -43,13 +47,17 @@ describe('<TextField />', () => {
     const input = getByLabelText('test');
     const button = getByTestId('submit');
 
-    userEvent.type(input, str);
+    act(() => {
+      userEvent.type(input, str);
+    });
 
     expect((input as HTMLInputElement).value).toEqual(str);
 
-    userEvent.click(button);
+    act(() => {
+      userEvent.click(button);
+    });
 
-    await wait(() => expect(onSubmit).toHaveBeenCalledTimes(1));
+    await waitFor(() => expect(onSubmit).toHaveBeenCalledTimes(1));
     expect(onSubmit.mock.calls[0][0]).toEqual({ test: str });
   });
 
@@ -82,13 +90,21 @@ describe('<TextField />', () => {
 
     expect((input as HTMLInputElement).value).toEqual('foo,bar');
 
-    userEvent.type(input, toType);
+    act(() => {
+      fireEvent.change(input, { target: { value: '' } });
+    });
+
+    act(() => {
+      userEvent.type(input, toType);
+    });
 
     expect((input as HTMLInputElement).value).toEqual(toType);
 
-    userEvent.click(button);
+    act(() => {
+      userEvent.click(button);
+    });
 
-    await wait(() => expect(onSubmit).toHaveBeenCalledTimes(1));
+    await waitFor(() => expect(onSubmit).toHaveBeenCalledTimes(1));
     expect(onSubmit.mock.calls[0][0]).toEqual({ test: { hello: 0, there: 1 } });
   });
 });

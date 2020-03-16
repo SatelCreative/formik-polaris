@@ -1,6 +1,8 @@
 import React from 'react';
-import { TextField as PolarisTextField } from '@shopify/polaris';
-import { BaseProps as PolarisTextFieldProps } from '@shopify/polaris/types/components/TextField/TextField';
+import {
+  TextField as PolarisTextField,
+  TextFieldProps as PolarisTextFieldProps,
+} from '@shopify/polaris';
 import { usePolarisField, UsePolarisFieldProps } from './usePolarisField';
 import { Omit, OmittedPolarisProps } from './types';
 

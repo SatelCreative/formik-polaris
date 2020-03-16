@@ -34,7 +34,7 @@
   "scripts": {
     "start": "tsdx watch",
     "build": "tsdx build",
-    "test": "tsdx test --env=jsdom",
+    "test": "tsdx test --env=jest-environment-jsdom-sixteen",
     "lint": "eslint src/*.ts*",
     "release": "env-cmd env release-it"
   },
@@ -43,29 +43,30 @@
     "registry": "https://registry.npmjs.org/"
   },
   "peerDependencies": {
-    "@shopify/polaris": ">=4",
-    "formik": ">=2.0",
+    "@shopify/polaris": ">=4.12",
+    "formik": ">=2.1",
     "react": ">=16.8"
   },
   "devDependencies": {
-    "@satel/eslint-config-ts-react": "3.2.0",
-    "@shopify/jest-dom-mocks": "2.8.7",
-    "@shopify/polaris": "4.10.2",
-    "@testing-library/dom": "6.11.0",
-    "@testing-library/react": "9.4.0",
-    "@testing-library/user-event": "8.0.3",
-    "@types/jest": "24.0.25",
-    "@types/react": "16.9.17",
-    "@types/react-dom": "16.9.4",
+    "@satel/eslint-config-ts-react": "3.3.1",
+    "@shopify/jest-dom-mocks": "2.8.10",
+    "@shopify/polaris": "4.16.0",
+    "@testing-library/dom": "7.0.4",
+    "@testing-library/react": "10.0.1",
+    "@testing-library/user-event": "10.0.0",
+    "@types/jest": "25.1.4",
+    "@types/react": "16.9.23",
+    "@types/react-dom": "16.9.5",
     "auto-changelog": "1.16.2",
-    "env-cmd": "10.0.1",
+    "env-cmd": "10.1.0",
     "eslint": "6.8.0",
-    "formik": "2.1.1",
-    "react": "16.12.0",
-    "react-dom": "16.12.0",
+    "formik": "2.1.4",
+    "jest-environment-jsdom-sixteen": "1.0.3",
+    "react": "16.13.0",
+    "react-dom": "16.13.0",
     "release-it": "12.4.3",
-    "tsdx": "0.12.1",
-    "tslib": "1.10.0",
-    "typescript": "3.7.4"
+    "tsdx": "0.12.3",
+    "tslib": "1.11.1",
+    "typescript": "3.8.3"
   }
 }

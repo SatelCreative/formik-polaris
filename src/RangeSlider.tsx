@@ -1,11 +1,12 @@
 import React from 'react';
-import { RangeSlider as PolarisRangeSlider } from '@shopify/polaris';
 import {
+  RangeSlider as PolarisRangeSlider,
   RangeSliderProps as PolarisRangeSliderProps,
-  RangeSliderValue,
-} from '@shopify/polaris/types/components/RangeSlider';
+} from '@shopify/polaris';
 import { usePolarisField, UsePolarisFieldProps } from './usePolarisField';
 import { Omit, OmittedPolarisProps } from './types';
+
+export type RangeSliderValue = PolarisRangeSliderProps['value'];
 
 type Props<V> = UsePolarisFieldProps<V, RangeSliderValue> &
   PolarisRangeSliderProps;
