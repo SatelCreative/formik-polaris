@@ -33,14 +33,14 @@ function RangeSlider<V = any>(props: RangeSliderProps<V>) {
 
   return (
     <PolarisRangeSlider
+      id={name}
+      error={error}
       disabled={isSubmitting}
       {...polarisProps}
-      id={name}
       value={value}
       onFocus={handleFocus}
       onBlur={handleBlur}
       onChange={handleChange}
-      error={error}
     />
   );
 }
