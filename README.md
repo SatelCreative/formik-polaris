@@ -13,7 +13,7 @@ yarn add @satel/formik-polaris
 `formik-polaris` also requires the following to have been installed separately:
 - [`react@>=16.8`](https://www.npmjs.com/package/react)
 - [`formik@2`](https://www.npmjs.com/package/formik)
-- [`@shopify/polaris@4`](https://www.npmjs.com/package/@shopify/polaris)
+- [`@shopify/polaris@>=4.12`](https://www.npmjs.com/package/@shopify/polaris)
 
 _if you need support for an older version, try out a `0.X.X` release_
 
