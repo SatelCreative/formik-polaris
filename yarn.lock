@@ -1207,30 +1207,30 @@
     promise "^8.0.3"
     tslib "^1.9.3"
 
-"@shopify/polaris-icons@^3.9.0":
-  version "3.9.0"
-  resolved "https://registry.yarnpkg.com/@shopify/polaris-icons/-/polaris-icons-3.9.0.tgz#7064b234824788972593efcda9ae7b87f2a2da43"
-  integrity sha512-isGvHpkH57IsQl6iAZA81LaIPdGi8gNSON5hLWXSERvP9SwgTenfDrkOD3UvzLY09Hh7m8lkFBMUVv/ta33xrg==
+"@shopify/polaris-icons@^3.10.0":
+  version "3.10.0"
+  resolved "https://registry.yarnpkg.com/@shopify/polaris-icons/-/polaris-icons-3.10.0.tgz#01fa32853c304c58d768209a74f88ac9d7a51098"
+  integrity sha512-Y8cTtFwIfkUDlCHonCimSxPdHk9AE11PYsh9JqzTKLjsAv6p3De/JQR/gZfAifmAAhg0XBmaaV5K4Y6Z5J6xAw==
 
-"@shopify/polaris-tokens@^2.12.0":
-  version "2.12.0"
-  resolved "https://registry.yarnpkg.com/@shopify/polaris-tokens/-/polaris-tokens-2.12.0.tgz#3671afb17057659af91566f880b5d4faa7e1b9d6"
-  integrity sha512-C3UMaex8+6lcKfN5ivH1owmx37V9Y0H3iaXaptGyG7MSf64Tftk3zY38v6y+8QdpyUTrqV831DcN9uYWbJMRtQ==
+"@shopify/polaris-tokens@^2.12.2":
+  version "2.12.2"
+  resolved "https://registry.yarnpkg.com/@shopify/polaris-tokens/-/polaris-tokens-2.12.2.tgz#22bfdf6f9864364885135c333aa8dd2f161a093d"
+  integrity sha512-1avL28ie6WMiVd+NXEt8TAdUBhvTlKVlw2px9WoPZktXvS+ebwK+pce7piovzFfrd4WCHweATGn2S50kjl1uUw==
   dependencies:
     hsluv "^0.1.0"
     tslib "^1.10.0"
 
-"@shopify/polaris@4.16.0":
-  version "4.16.0"
-  resolved "https://registry.yarnpkg.com/@shopify/polaris/-/polaris-4.16.0.tgz#c67f8b6eb70effb3425d3ab3b243acfdbd6cc533"
-  integrity sha512-HrrnN+X9+AUjaJ6NII4or3ElRViI/6vmyxrwJK+29Vo/39WW4Esl5TT61dRa3N3Vrl/3bkQSHmshJIGZTcUgdw==
+"@shopify/polaris@4.17.0":
+  version "4.17.0"
+  resolved "https://registry.yarnpkg.com/@shopify/polaris/-/polaris-4.17.0.tgz#0b6983fbc2634d58bf1cc8f5deb9334b2a299f8e"
+  integrity sha512-1RmMhb8Wm1PLU21a0mw0lRxNNCKwZ7cQaI/f6aJ6hHtMbBzSHuPrLeDmc3oFZ2uLuOsGTdzV90UYenmlo1pUCA==
   dependencies:
     "@babel/runtime" "^7.1.6"
     "@material-ui/react-transition-group" "^4.2.0"
     "@shopify/app-bridge" "^1.3.0"
     "@shopify/javascript-utilities" "^2.4.1"
-    "@shopify/polaris-icons" "^3.9.0"
-    "@shopify/polaris-tokens" "^2.12.0"
+    "@shopify/polaris-icons" "^3.10.0"
+    "@shopify/polaris-tokens" "^2.12.2"
     "@shopify/useful-types" "^1.2.4"
     "@types/hoist-non-react-statics" "^3.3.1"
     "@types/react" "^16.8.15"
