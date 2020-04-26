@@ -1170,10 +1170,10 @@
   resolved "https://registry.yarnpkg.com/@shopify/async/-/async-2.1.4.tgz#5e326240a161c20387b2939e7e875ebb11de56de"
   integrity sha512-ckjtMjQE38Rq6pucfQ/oF4YSCEX1Y9ErhgOm7ZgTuJhr7fzti5/cFzWNRl0jf7q+hWb8Ve22XXmJLMlB+2v1rA==
 
-"@shopify/decorators@^1.1.9":
-  version "1.1.9"
-  resolved "https://registry.yarnpkg.com/@shopify/decorators/-/decorators-1.1.9.tgz#6d8fd963c957a15474d2862c4b9b8a9431efccb7"
-  integrity sha512-Swl2xGJaZRzJrINeiINeHZg1v4xMELEbzypZHGonwRMNodW4OV3jKhsZ00iSONvMGBKx8Qnw2jhiAsTYMLLrJg==
+"@shopify/decorators@^1.1.11":
+  version "1.1.11"
+  resolved "https://registry.yarnpkg.com/@shopify/decorators/-/decorators-1.1.11.tgz#ae111160185d9f33aebbab4df401b4bea858f302"
+  integrity sha512-qE5y08Oh6ukSQuF7CIPaCs9oLy99nRv1Rmq9rhb7Q02DB9+8z6uNGVmhcftbrIs/7VEMlqk0LrfL6e0ijrxy3g==
   dependencies:
     "@shopify/function-enhancers" "^1.0.9"
 
@@ -1192,17 +1192,16 @@
     lodash "^4.17.4"
     lodash-decorators "^4.3.5"
 
-"@shopify/jest-dom-mocks@2.8.10":
-  version "2.8.10"
-  resolved "https://registry.yarnpkg.com/@shopify/jest-dom-mocks/-/jest-dom-mocks-2.8.10.tgz#469d6d6a4a05ca1065505b26ea58ee0624955a5e"
-  integrity sha512-Y9oS+lU5MX5wfDcZ1AfY608R9HB946Usz9NnL4PwnPoHZlkOmnCp8Pfw0apYPCnZLsk6JbSIpftyn3tOFeFT6w==
+"@shopify/jest-dom-mocks@2.9.0":
+  version "2.9.0"
+  resolved "https://registry.yarnpkg.com/@shopify/jest-dom-mocks/-/jest-dom-mocks-2.9.0.tgz#7b1c2ed58a6554f30e945fe5b49e9ef35f9195e7"
+  integrity sha512-+S3Hf7Tx7Tt5U0trOfTMh77aZ6OsbCiXhTRX79FO7/XY6f2azUE0JubqAz6GyGbuE0Fd4DgP0/reRRICXfN+Ng==
   dependencies:
     "@shopify/async" "^2.1.4"
-    "@shopify/decorators" "^1.1.9"
+    "@shopify/decorators" "^1.1.11"
     "@types/fetch-mock" "^6.0.1"
     "@types/lolex" "^2.1.3"
     fetch-mock "^6.3.0"
-    lodash ">=4.0.0 <5.0.0"
     lolex "^2.7.5"
     promise "^8.0.3"
     tslib "^1.9.3"
@@ -5269,7 +5268,7 @@ lodash.uniqby@^4.7.0:
   resolved "https://registry.yarnpkg.com/lodash.uniqby/-/lodash.uniqby-4.7.0.tgz#d99c07a669e9e6d24e1362dfe266c67616af1302"
   integrity sha1-2ZwHpmnp5tJOE2Lf4mbGdhavEwI=
 
-lodash@4.17.15, "lodash@>=4.0.0 <5.0.0", lodash@^4.17.11, lodash@^4.17.13, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.4:
+lodash@4.17.15, lodash@^4.17.11, lodash@^4.17.13, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.4:
   version "4.17.15"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
   integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
