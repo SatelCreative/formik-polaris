@@ -1,3 +1,4 @@
+import '@testing-library/jest-dom';
 import React, { ReactNode } from 'react';
 import { render, RenderOptions } from '@testing-library/react';
 import { AppProvider } from '@shopify/polaris';

@@ -1,16 +1,14 @@
 /* eslint-env jest */
 import React from 'react';
 import userEvent from '@testing-library/user-event';
-import { act, fireEvent } from '@testing-library/react';
+import { act } from '@testing-library/react';
 
 import { matchMedia } from '@shopify/jest-dom-mocks';
 
+import { FormikProps } from 'formik';
 import { render, cleanup } from './test-utils';
 import { TextField } from '../src';
 import { BasicForm } from './util';
-
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const { waitFor } = require('@testing-library/react');
 
 afterEach(cleanup);
 
@@ -33,78 +31,47 @@ describe('<TextField />', () => {
     getByLabelText('test');
   });
 
-  it('updates formik values when typed in', async () => {
-    const onSubmit = jest.fn();
-    const str = 'Hello there';
+  it('updates formik state', async () => {
+    const ref = React.createRef<FormikProps<any>>();
 
-    const { getByLabelText, getByTestId } = render(
-      <BasicForm onSubmit={onSubmit}>
-        <TextField label="test" name="test" />
-        <input type="submit" data-testid="submit" />
+    const { getByLabelText } = render(
+      <BasicForm formikRef={ref}>
+        <TextField label="text" name="text" />
       </BasicForm>,
     );
 
-    const input = getByLabelText('test');
-    const button = getByTestId('submit');
+    await userEvent.type(getByLabelText('text'), 'Hello, World!');
 
-    act(() => {
-      userEvent.type(input, str);
-    });
-
-    expect((input as HTMLInputElement).value).toEqual(str);
-
-    act(() => {
-      userEvent.click(button);
-    });
-
-    await waitFor(() => expect(onSubmit).toHaveBeenCalledTimes(1));
-    expect(onSubmit.mock.calls[0][0]).toEqual({ test: str });
+    expect(getByLabelText('text')).toHaveAttribute('value', 'Hello, World!');
+    expect(ref.current?.values).toEqual({ text: 'Hello, World!' });
   });
 
-  it('correctly encodes and decodes values', async () => {
-    const onSubmit = jest.fn();
-    const toType = 'hello,there';
+  it('encodes and decodes', async () => {
+    const ref = React.createRef<FormikProps<any>>();
 
-    const { getByLabelText, getByTestId } = render(
-      <BasicForm
-        initialValues={{ test: { foo: 0, bar: 1 } }}
-        onSubmit={onSubmit}
-      >
-        <TextField<{ [key: string]: number }>
-          label="test"
-          name="test"
-          decode={val => Object.keys(val).join(',')}
-          encode={str =>
-            str
-              .split(',')
-              .map(s => s.trim())
-              .reduce((acc, s, i) => ({ ...acc, [s]: i }), {})
-          }
-        />
-        <input type="submit" data-testid="submit" />
+    function encode(raw: string) {
+      return raw.toUpperCase();
+    }
+
+    function decode(value: string) {
+      return value.toLowerCase();
+    }
+
+    const { getByLabelText } = render(
+      <BasicForm formikRef={ref} initialValues={{ text: 'HELLO' }}>
+        <TextField label="text" name="text" encode={encode} decode={decode} />
       </BasicForm>,
     );
 
-    const input = getByLabelText('test');
-    const button = getByTestId('submit');
+    expect(getByLabelText('text')).toHaveAttribute('value', 'hello');
+    expect(ref.current?.values).toEqual({ text: 'HELLO' });
 
-    expect((input as HTMLInputElement).value).toEqual('foo,bar');
+    await act(async () => userEvent.clear(getByLabelText('text')));
+    expect(getByLabelText('text')).toHaveAttribute('value', '');
+    expect(ref.current?.values).toEqual({ text: '' });
 
-    act(() => {
-      fireEvent.change(input, { target: { value: '' } });
-    });
-
-    act(() => {
-      userEvent.type(input, toType);
-    });
-
-    expect((input as HTMLInputElement).value).toEqual(toType);
-
-    act(() => {
-      userEvent.click(button);
-    });
-
-    await waitFor(() => expect(onSubmit).toHaveBeenCalledTimes(1));
-    expect(onSubmit.mock.calls[0][0]).toEqual({ test: { hello: 0, there: 1 } });
+    await userEvent.type(getByLabelText('text'), 'Hello, World!');
+    expect(getByLabelText('text')).toHaveAttribute('value', 'hello, world!');
+    expect(ref.current?.values).toEqual({ text: 'HELLO, WORLD!' });
   });
 });
