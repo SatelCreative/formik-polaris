@@ -50,7 +50,7 @@
   "devDependencies": {
     "@satel/eslint-config-ts-react": "3.3.1",
     "@shopify/jest-dom-mocks": "2.9.0",
-    "@shopify/polaris": "4.25.0",
+    "@shopify/polaris": "4.25.1",
     "@testing-library/dom": "7.10.1",
     "@testing-library/jest-dom": "5.9.0",
     "@testing-library/react": "10.2.0",
