@@ -1224,10 +1224,10 @@
     hsluv "^0.1.0"
     tslib "^1.10.0"
 
-"@shopify/polaris@4.25.0":
-  version "4.25.0"
-  resolved "https://registry.yarnpkg.com/@shopify/polaris/-/polaris-4.25.0.tgz#c2b407d2f0e1e790a6ba1cdada1cef464774c5b4"
-  integrity sha512-7Ptk31tQfpmdbboJO3Dp8NrROTQUhvGY0cl40OXGDsqux2L4SjgyOXkd0LFXc8/P24DovuGONCXh3kI6JMj6ZQ==
+"@shopify/polaris@4.27.0":
+  version "4.27.0"
+  resolved "https://registry.yarnpkg.com/@shopify/polaris/-/polaris-4.27.0.tgz#a075d91438b0de8ee0521e3082abd63deb233ea8"
+  integrity sha512-mJCDjHgH/Xzif3SL6xr8GHZdyvudG48Fr0GizcDtUqHoWiUqNrVy/6P4IxyL5XC8aIs/YCsJj9bph88ADRZDiA==
   dependencies:
     "@babel/runtime" "^7.1.6"
     "@material-ui/react-transition-group" "^4.2.0"
