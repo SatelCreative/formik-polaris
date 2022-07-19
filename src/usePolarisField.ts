@@ -25,13 +25,15 @@ export interface UsePolarisFieldProps<V = any, T = V> {
    * Pass in a validation function to this field specifically
    */
   validate?: FieldValidator;
+
+  options?: any;
 }
 
 // eslint-disable-next-line import/prefer-default-export
 export function usePolarisField<V = any, T = V>(
   props: UsePolarisFieldProps<V, T>,
 ) {
-  const { name, encode, decode, validate } = props;
+  const { name, encode, decode, validate, options } = props;
 
   // Modified from https://github.com/jaredpalmer/formik/blob/5553720b5d6c9729cb3b12fd7948f28ad3be9adc/src/Field.tsx#L74
 
@@ -79,6 +81,13 @@ export function usePolarisField<V = any, T = V>(
     [encode, name, setFieldValue],
   );
 
+  const handleSelect = useCallback(
+    (v: T[]) => {
+      setFieldValue(name, encode ? encode(v[0]) : v[0]);
+    },
+    [encode, name, setFieldValue],
+  );
+
   const error = useMemo(() => {
     if (meta.error && meta.touched) {
       return meta.error;
@@ -87,6 +96,12 @@ export function usePolarisField<V = any, T = V>(
     return undefined;
   }, [meta.error, meta.touched]);
 
+  const optionsValues = useMemo(() => {
+    const ops = options.filter((o: any) => o.value.includes(value));
+
+    return ops;
+  }, [value, options]);
+
   return useMemo(
     () => ({
       ...field,
@@ -94,9 +109,11 @@ export function usePolarisField<V = any, T = V>(
       handleFocus,
       handleBlur,
       handleChange,
+      handleSelect,
       value,
       isSubmitting,
       error,
+      optionsValues,
     }),
     [
       error,
@@ -104,9 +121,11 @@ export function usePolarisField<V = any, T = V>(
       handleBlur,
       handleChange,
       handleFocus,
+      handleSelect,
       isSubmitting,
       meta,
       value,
+      optionsValues,
     ],
   );
 }
